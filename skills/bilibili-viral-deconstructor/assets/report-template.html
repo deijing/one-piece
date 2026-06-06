@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爆款拆解 · 示例视频</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // 高亮色：默认 B站粉。识别到内容主品牌时可换其官方 VI 色。
+  tailwind.config = {
+    theme: { extend: {
+      colors: { brand: '#FB7299', card: '#1a1a1a', card2: '#222222' },
+      fontFamily: { sans: ['-apple-system','BlinkMacSystemFont','PingFang SC','Microsoft YaHei','sans-serif'] }
+    }}
+  }
+</script>
+<style>
+  html{scroll-behavior:smooth}
+  body{background:#000;}
+  .brand-grad-soft{background:linear-gradient(135deg,rgba(251,114,153,.16),rgba(251,114,153,.04));}
+  .brand-text{color:#FB7299}
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+  ::selection{background:#FB7299;color:#fff}
+</style>
+</head>
+<body class="text-white font-sans antialiased">
+
+<div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+
+  <!-- ===== HERO ===== -->
+  <header class="mb-16">
+    <div class="reveal flex items-center gap-3 mb-5">
+      <i class="fa-brands fa-bilibili brand-text text-2xl"></i>
+      <span class="tracking-[.3em] text-xs text-gray-400 uppercase">Viral Video Teardown · 八层拆解</span>
+    </div>
+    <h1 class="reveal text-4xl sm:text-6xl font-bold leading-tight">
+      为什么这条视频能<span class="brand-text">破圈爆掉</span>
+    </h1>
+    <p class="reveal text-lg sm:text-xl font-semibold text-gray-400 mt-4">
+      [视频标题] · Why This Video Went Viral
+    </p>
+    <p class="reveal text-sm text-gray-500 mt-3">UP主 示例 · 一句话定性：破圈干货型，靠「收藏」驱动的算法强推</p>
+  </header>
+
+  <!-- ===== 第一层 数据爆火 ===== -->
+  <section class="mb-8">
+    <div class="reveal bg-card rounded-2xl border border-[#333] p-6 sm:p-9 shadow-lg">
+      <div class="flex items-center justify-between flex-wrap gap-4 mb-7">
+        <div class="flex items-center gap-3">
+          <span class="text-5xl font-bold brand-text leading-none">01</span>
+          <div>
+            <h2 class="text-2xl font-bold">数据爆火分析</h2>
+            <p class="text-xs text-gray-500">Performance · 它爆到什么程度、靠什么爆</p>
+          </div>
+        </div>
+        <div class="w-full sm:w-56"><canvas id="engageChart" height="130"></canvas></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5 brand-grad-soft">
+          <i class="fa-solid fa-rocket brand-text mb-3 text-lg"></i>
+          <div class="text-5xl font-bold brand-text leading-none">50<span class="text-2xl">倍</span></div>
+          <div class="text-xs text-gray-500 mt-2">Play / Fans Ratio</div>
+          <div class="text-sm text-gray-400 mt-2">播粉比 · 远超 1，算法强推、破圈</div>
+        </div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5 brand-grad-soft">
+          <i class="fa-regular fa-bookmark brand-text mb-3 text-lg"></i>
+          <div class="text-5xl font-bold brand-text leading-none">4.1<span class="text-2xl">%</span></div>
+          <div class="text-xs text-gray-500 mt-2">Favorite Rate</div>
+          <div class="text-sm text-gray-400 mt-2">收藏率畸高 · 被当资料存，长期价值</div>
+        </div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5">
+          <i class="fa-solid fa-thumbs-up brand-text mb-3 text-lg"></i>
+          <div class="text-5xl font-bold leading-none">3.5<span class="text-2xl text-gray-500">%</span></div>
+          <div class="text-xs text-gray-500 mt-2">Like Rate</div>
+          <div class="text-sm text-gray-400 mt-2">点赞率 · 偏高，即时认可强</div>
+        </div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5">
+          <i class="fa-solid fa-coins brand-text mb-3 text-lg"></i>
+          <div class="text-5xl font-bold leading-none">1.8<span class="text-2xl text-gray-500">%</span></div>
+          <div class="text-xs text-gray-500 mt-2">Coin Rate</div>
+          <div class="text-sm text-gray-400 mt-2">投币率 · 认可创作者付出</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 第二层 选题 ===== -->
+  <section class="mb-8">
+    <div class="reveal bg-card rounded-2xl border border-[#333] p-6 sm:p-9 shadow-lg">
+      <div class="flex items-center gap-3 mb-7">
+        <span class="text-5xl font-bold brand-text leading-none">02</span>
+        <div><h2 class="text-2xl font-bold">选题分析</h2><p class="text-xs text-gray-500">Topic · 能爆 70% 看选题</p></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5">
+          <div class="text-3xl font-bold brand-text">受众面 · 广</div>
+          <div class="text-xs text-gray-500 mt-1">Audience Breadth</div>
+          <p class="text-sm text-gray-400 mt-2">普世痛点，几乎人人关心，天然易破圈</p>
+        </div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5">
+          <div class="text-3xl font-bold">时效性 · 中</div>
+          <div class="text-xs text-gray-500 mt-1">Timeliness</div>
+          <p class="text-sm text-gray-400 mt-2">踩了一个近期讨论度上升的情绪节点</p>
+        </div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5">
+          <div class="text-3xl font-bold brand-text">信息差 · 高</div>
+          <div class="text-xs text-gray-500 mt-1">Info Gap</div>
+          <p class="text-sm text-gray-400 mt-2">讲了大多数人没串起来过的认知</p>
+        </div>
+      </div>
+      <div class="reveal rounded-lg border border-brand/40 brand-grad-soft p-5">
+        <span class="brand-text font-bold">切入角度 ·</span>
+        <span class="text-gray-300">把一个人人有感、却没人系统讲透的痛点，用「信息差」的姿态切入——这是可复用的选题骨架。</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 第三层 标题封面钩子 ===== -->
+  <section class="mb-8">
+    <div class="reveal bg-card rounded-2xl border border-[#333] p-6 sm:p-9 shadow-lg">
+      <div class="flex items-center gap-3 mb-7">
+        <span class="text-5xl font-bold brand-text leading-none">03</span>
+        <div><h2 class="text-2xl font-bold">标题 &amp; 封面钩子</h2><p class="text-xs text-gray-500">Hook · 决定点击率</p></div>
+      </div>
+      <div class="reveal bg-black/30 rounded-lg p-5 mb-5 border-l-2 border-brand">
+        <span class="text-xs text-gray-500">原标题</span>
+        <p class="text-lg text-gray-200 mt-1">「[把视频原标题放这里]」</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5"><i class="fa-solid fa-circle-question brand-text mb-2"></i><div class="text-xl font-bold">反常识型</div><p class="text-sm text-gray-400 mt-1">"原来一直都做错了"，制造认知冲突</p></div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5"><i class="fa-solid fa-1 brand-text mb-2"></i><div class="text-xl font-bold">数字型</div><p class="text-sm text-gray-400 mt-1">给出确定的数量，降低点击成本</p></div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5"><i class="fa-solid fa-user brand-text mb-2"></i><div class="text-xl font-bold">身份代入型</div><p class="text-sm text-gray-400 mt-1">精准圈定"这说的就是我"</p></div>
+      </div>
+      <p class="reveal text-sm text-gray-500 mt-4 italic">标题公式 = 反常识 + 数字 + 身份代入，三钩叠加最大化点击率。</p>
+    </div>
+  </section>
+
+  <!-- ===== 第四层 开头黄金3秒 ===== -->
+  <section class="mb-8">
+    <div class="reveal bg-card rounded-2xl border border-[#333] p-6 sm:p-9 shadow-lg">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-5xl font-bold brand-text leading-none">04</span>
+        <div><h2 class="text-2xl font-bold">开头黄金 3 秒</h2><p class="text-xs text-gray-500">Opening · 给观众不划走的理由</p></div>
+      </div>
+      <div class="reveal rounded-xl border border-brand/40 brand-grad-soft p-6">
+        <div class="flex items-center gap-2 mb-3"><i class="fa-solid fa-quote-left brand-text"></i><span class="text-xs brand-text font-bold tracking-[.2em]">00:00 开场原话</span></div>
+        <p class="text-xl sm:text-2xl font-bold mb-4">"[把开头那句留人的话放这里]"</p>
+        <p class="text-sm text-gray-400 border-l-2 border-brand pl-3">留人策略：直接抛出一个颠覆认知的结论，制造"我得听听为什么"的好奇缺口——这是开头模板。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 第五层 内容结构 ===== -->
+  <section class="mb-8">
+    <div class="reveal bg-card rounded-2xl border border-[#333] p-6 sm:p-9 shadow-lg">
+      <div class="flex items-center gap-3 mb-7">
+        <span class="text-5xl font-bold brand-text leading-none">05</span>
+        <div><h2 class="text-2xl font-bold">内容结构</h2><p class="text-xs text-gray-500">Structure · 问题-分析-方案</p></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5"><div class="brand-text text-sm font-bold mb-1">00:00–00:30</div><div class="text-lg font-bold">抛结论制造焦虑</div><p class="text-sm text-gray-400 mt-1">先点痛，把观众钉住</p></div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5"><div class="brand-text text-sm font-bold mb-1">00:30–02:00</div><div class="text-lg font-bold">拆原因</div><p class="text-sm text-gray-400 mt-1">逐层分析为什么会这样</p></div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5"><div class="brand-text text-sm font-bold mb-1">02:00–04:00</div><div class="text-lg font-bold">给方案</div><p class="text-sm text-gray-400 mt-1">可操作的出路，提供价值</p></div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5"><div class="brand-text text-sm font-bold mb-1">04:00–结尾</div><div class="text-lg font-bold">升华+收口</div><p class="text-sm text-gray-400 mt-1">拔高立意，引导行动</p></div>
+      </div>
+      <p class="reveal text-sm text-gray-500 mt-4 italic">衔接手法：每段结尾用一句过渡钩子把注意力"拉"到下一段。</p>
+    </div>
+  </section>
+
+  <!-- ===== 第六层 中间钩子节奏 ===== -->
+  <section class="mb-8">
+    <div class="reveal bg-card rounded-2xl border border-[#333] p-6 sm:p-9 shadow-lg">
+      <div class="flex items-center gap-3 mb-7">
+        <span class="text-5xl font-bold brand-text leading-none">06</span>
+        <div><h2 class="text-2xl font-bold">中间钩子 &amp; 节奏</h2><p class="text-xs text-gray-500">Retention Hooks · 约每 30-60 秒一个</p></div>
+      </div>
+      <div class="space-y-3">
+        <div class="reveal flex items-start gap-4 bg-card2 rounded-lg border border-[#333] p-4"><span class="brand-text font-bold text-sm w-14 shrink-0">00:45</span><div><span class="text-xs brand-text">预告更精彩</span><p class="text-sm text-gray-300">"但这还不是最离谱的"</p></div></div>
+        <div class="reveal flex items-start gap-4 bg-card2 rounded-lg border border-[#333] p-4"><span class="brand-text font-bold text-sm w-14 shrink-0">01:40</span><div><span class="text-xs brand-text">突然转折</span><p class="text-sm text-gray-300">"你以为到这就结束了？"</p></div></div>
+        <div class="reveal flex items-start gap-4 bg-card2 rounded-lg border border-[#333] p-4"><span class="brand-text font-bold text-sm w-14 shrink-0">02:55</span><div><span class="text-xs brand-text">抛新问题</span><p class="text-sm text-gray-300">"那到底该怎么办？"</p></div></div>
+      </div>
+      <p class="reveal text-sm text-gray-500 mt-4 italic">节奏评价：钩子间隔均匀（约 60 秒一个），无明显流失断点。</p>
+    </div>
+  </section>
+
+  <!-- ===== 第七层 焦虑点情绪 ===== -->
+  <section class="mb-8">
+    <div class="reveal bg-card rounded-2xl border border-[#333] p-6 sm:p-9 shadow-lg">
+      <div class="flex items-center gap-3 mb-7">
+        <span class="text-5xl font-bold brand-text leading-none">07</span>
+        <div><h2 class="text-2xl font-bold">焦虑点 &amp; 情绪操控</h2><p class="text-xs text-gray-500">Emotional Triggers · 爆款核心武器</p></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5 brand-grad-soft"><div class="flex items-center gap-2 mb-2"><i class="fa-solid fa-triangle-exclamation brand-text"></i><span class="text-xs brand-text font-semibold">00:10 · 制造焦虑</span></div><p class="text-sm text-gray-300">"你再不做就来不及了"</p></div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5 brand-grad-soft"><div class="flex items-center gap-2 mb-2"><i class="fa-solid fa-heart-crack brand-text"></i><span class="text-xs brand-text font-semibold">01:20 · 戳痛点</span></div><p class="text-sm text-gray-300">"为什么你那么努力还是没结果"</p></div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5 brand-grad-soft"><div class="flex items-center gap-2 mb-2"><i class="fa-solid fa-eye-slash brand-text"></i><span class="text-xs brand-text font-semibold">03:30 · 信息差恐惧</span></div><p class="text-sm text-gray-300">"有些事他们不会告诉你"</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 第八层 结尾转化 ===== -->
+  <section class="mb-8">
+    <div class="reveal bg-card rounded-2xl border border-[#333] p-6 sm:p-9 shadow-lg">
+      <div class="flex items-center gap-3 mb-7">
+        <span class="text-5xl font-bold brand-text leading-none">08</span>
+        <div><h2 class="text-2xl font-bold">结尾 &amp; 转化设计</h2><p class="text-xs text-gray-500">Ending · 再给一个行动理由</p></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5"><i class="fa-solid fa-bookmark brand-text mb-2"></i><div class="text-lg font-bold">引导三连</div><p class="text-sm text-gray-400 mt-1">用"怕你找不到"做收藏理由，而非空喊</p></div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5"><i class="fa-solid fa-forward brand-text mb-2"></i><div class="text-lg font-bold">留悬念追更</div><p class="text-sm text-gray-400 mt-1">"下期讲更关键的那一步"</p></div>
+        <div class="reveal bg-card2 rounded-lg border border-[#333] p-5"><i class="fa-solid fa-user-plus brand-text mb-2"></i><div class="text-lg font-bold">引导关注</div><p class="text-sm text-gray-400 mt-1">把关注和"持续获得价值"绑定</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 可复用经验 ===== -->
+  <section class="mb-8">
+    <div class="reveal bg-card rounded-2xl border border-brand/30 p-6 sm:p-9 shadow-lg brand-grad-soft">
+      <div class="flex items-center justify-between flex-wrap gap-3 mb-6">
+        <div class="flex items-center gap-3">
+          <i class="fa-regular fa-lightbulb brand-text text-xl"></i>
+          <div><h2 class="text-2xl font-bold">可复用方法论</h2><p class="text-xs text-gray-500">Reusable Playbook · 拆出骨架，不是抄这一条</p></div>
+        </div>
+        <button onclick="copyPlaybook()" id="copyBtn" class="bg-brand hover:brightness-110 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition"><i class="fa-regular fa-copy mr-1"></i>复制全部</button>
+      </div>
+      <div id="playbook" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bubble bg-card2 border border-[#333] rounded-lg p-5"><div class="brand-text font-bold mb-2">选题角度</div><p class="text-sm text-gray-300">人人有感 + 没人系统讲透，用信息差姿态切入</p></div>
+        <div class="bubble bg-card2 border border-[#333] rounded-lg p-5"><div class="brand-text font-bold mb-2">标题公式</div><p class="text-sm text-gray-300">反常识 + 数字 + 身份代入</p></div>
+        <div class="bubble bg-card2 border border-[#333] rounded-lg p-5"><div class="brand-text font-bold mb-2">开头模板</div><p class="text-sm text-gray-300">3 秒内抛颠覆性结论，制造好奇缺口</p></div>
+        <div class="bubble bg-card2 border border-[#333] rounded-lg p-5"><div class="brand-text font-bold mb-2">钩子节奏</div><p class="text-sm text-gray-300">每 30-60 秒一个小钩子，类型交替</p></div>
+        <div class="bubble bg-card2 border border-[#333] rounded-lg p-5"><div class="brand-text font-bold mb-2">情绪话术</div><p class="text-sm text-gray-300">焦虑 → 痛点 → 信息差恐惧，层层加压</p></div>
+        <div class="bubble bg-card2 border border-[#333] rounded-lg p-5"><div class="brand-text font-bold mb-2">结构框架</div><p class="text-sm text-gray-300">焦虑 → 拆因 → 给方案 → 升华收口</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center text-gray-600 text-xs mt-12">B站爆款视频拆解 · 由 bilibili-viral-deconstructor 生成</footer>
+</div>
+
+<script>
+// ===== 滚动淡入 =====
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach((e)=>{
+    if(e.isIntersecting){
+      const sibs=[...e.target.parentElement.children].filter(c=>c.classList.contains('reveal'));
+      e.target.style.transitionDelay=(Math.max(0,sibs.indexOf(e.target))*70)+'ms';
+      e.target.classList.add('show');io.unobserve(e.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ===== 复制方法论 =====
+function copyPlaybook(){
+  const txt=[...document.querySelectorAll('#playbook .bubble')].map(b=>b.textContent.trim().replace(/\s+/g,' ')).join('\n');
+  navigator.clipboard.writeText(txt).then(()=>{
+    const b=document.getElementById('copyBtn');const o=b.innerHTML;
+    b.innerHTML='<i class="fa-solid fa-check mr-1"></i>已复制';setTimeout(()=>b.innerHTML=o,1800);
+  });
+}
+
+// ===== Chart.js =====
+const BRAND='#FB7299';
+Chart.defaults.color='#888';Chart.defaults.font.family="-apple-system,PingFang SC,sans-serif";
+// 互动率对比（点赞/收藏/投币/评论），单位 %
+new Chart(document.getElementById('engageChart'),{
+  type:'bar',
+  data:{labels:['点赞','收藏','投币','评论'],datasets:[{data:[3.5,4.1,1.8,0.6],backgroundColor:[BRAND,BRAND,'#3a3a3a','#3a3a3a'],borderRadius:6,barThickness:20}]},
+  options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{display:false,grid:{display:false}},y:{grid:{display:false},ticks:{color:'#aaa',font:{size:11}}}}}
+});
+</script>
+</body>
+</html>
